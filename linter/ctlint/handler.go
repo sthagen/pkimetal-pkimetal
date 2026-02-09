@@ -9,13 +9,14 @@ import (
 	"github.com/pkimetal/pkimetal/logger"
 
 	"github.com/crtsh/ctlint"
+	"github.com/crtsh/ctloglists"
 	"github.com/google/certificate-transparency-go/x509"
 )
 
 type Ctlint struct{}
 
 func init() {
-	if err := ctlint.LoadLogLists(); err != nil {
+	if err := ctloglists.Load(); err != nil {
 		logger.Logger.Fatal("ctlint: " + err.Error())
 	}
 
