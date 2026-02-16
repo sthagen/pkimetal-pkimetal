@@ -16,7 +16,7 @@ import (
 type Ctlint struct{}
 
 func init() {
-	if err := ctloglists.Load(); err != nil {
+	if err := ctloglists.LoadLogLists(); err != nil {
 		logger.Logger.Fatal("ctlint: " + err.Error())
 	}
 
